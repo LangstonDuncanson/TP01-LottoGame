@@ -27,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sumitBtn;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sgmDrawings;
 @property (weak, nonatomic) IBOutlet UIButton *winnerBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *gameImageView;
 
 @end
 
@@ -36,6 +37,7 @@
     [super viewDidLoad];
     [self hideInputs];
     [self hideInputStateChangers];
+    [self updateVisuals];
     _inputOne.delegate = self;
     _inputTwo.delegate = self;
     _inputThree.delegate = self;
@@ -78,6 +80,7 @@
     [self hideInputStateChangers];
     [self changeEnables];
     [self toggleDrawingsSgm];
+    [self updateVisuals];
 }
 -(void)toggleDrawingsSgm{
     if(_sgmGameSelector.selectedSegmentIndex == 4)
@@ -111,7 +114,34 @@
         _inputFive.text = [NSString stringWithFormat:@"%d",[self quickPlay:_inputFive]];
     [self changeEnables];
 }
-
+-(void)updateVisuals{
+    NSString * image;
+    UIColor * color;
+    switch (_sgmGameSelector.selectedSegmentIndex) {
+        case 0:
+            image= [NSString stringWithFormat:@"p2"];
+            color = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1];
+            break;
+        case 1:
+            image= [NSString stringWithFormat:@"p3"];
+            color = [UIColor colorWithRed:1.0 green:0.64 blue:0.0 alpha:1];            break;
+        case 2:
+            image= [NSString stringWithFormat:@"p4"];
+            color = [UIColor colorWithRed:0.0 green:1.0 blue:0.54 alpha:1];
+            break;
+        case 3:
+            image= [NSString stringWithFormat:@"p5"];
+            color = [UIColor colorWithRed:0.0 green:0.74 blue:1.0 alpha:1];
+            break;
+        case 4:
+            image= [NSString stringWithFormat:@"fan5"];
+            color = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1];
+            break;
+    }
+    image = [NSString stringWithFormat:@"%@.jpg",image];
+    self.gameImageView.image = [UIImage imageNamed:image];
+    self.view.backgroundColor = color;
+}
 -(void)hideInputStateChangers{
     if(_inputOne.hidden == YES)
         [_inputOneState setHidden:YES];
@@ -242,8 +272,8 @@
 -(void)changeEnablecolor
 {
     UIColor *active,*inactive;
-    active = [UIColor colorWithRed:254.0f green:254.0f blue:254.0f alpha:1];;
-    inactive = [UIColor colorWithRed:247.0f green:247.0f blue:192.0f alpha:0];
+    active = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1];;
+    inactive = [UIColor colorWithRed:0.97 green:0.97 blue:0.75 alpha:.5];
     
     if(_inputOne.enabled == NO)
         _inputOne.backgroundColor= inactive;
@@ -423,10 +453,48 @@
     }
     NSString *choiceDesc = [choicesArray componentsJoinedByString:@","];
     NSString *winningDesc = [winningArray componentsJoinedByString:@","];
+    int matchCount;
+    if(_sgmGameSelector.selectedSegmentIndex == 4)
+        matchCount = [self checkWinnings:choicesArray andWinning:winningArray exact:NO];
+    else
+        matchCount = [self checkWinnings:choicesArray andWinning:winningArray exact:YES];
+    NSMutableString *winningMessage = [NSMutableString stringWithFormat:@"not"];
+    if(_sgmGameSelector.selectedSegmentIndex == 0){
+        if(matchCount > 0)
+            winningMessage = [NSMutableString stringWithFormat:@"a"];
+    }else{
+        if(matchCount > 1)
+            winningMessage = [NSMutableString stringWithFormat:@"a"];
+    }
     
-    NSString * message = [NSString stringWithFormat:@"Your choice was: %@\n Winning Numbers are: %@",choiceDesc,winningDesc];
+    NSString * message = [NSString stringWithFormat:@"Your choice was: %@\n Winning Numbers are: %@ \n You have %d matches. \n You are %@ winner",choiceDesc,winningDesc,matchCount,winningMessage];
     [self showMessage:message andTitle:@"Winning Status"];
+    [self enableControls:YES];
+    _winnerBtn.enabled = NO;
+}
+-(int)checkWinnings:(NSMutableArray*)choices andWinning:(NSMutableArray*) winning exact:(BOOL)exactFlag{
+    int count = 0;
+    if(exactFlag == YES){
+    for (int i = 0; (!(i == [choices count])); i++){
+       NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:i]);
+        if([choices objectAtIndex:i] == [winning objectAtIndex:i]){
+            NSLog(@"Match Found");
+            count++;
+        }
+    }}else{
+        for (int i = 0; (!(i == [choices count])); i++){
+            for (int j = 0; (!(j == [winning count])); j++){
+                NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:j]);
+                if([choices objectAtIndex:i] == [winning objectAtIndex:j]){
+                    NSLog(@"Match Found");
+                    count++;
+                }
+                
+        }
+    }
     
+}
+    return count;
 }
 
 -(NSMutableArray*)generateWinningNumbers{
@@ -494,11 +562,11 @@
     NSMutableArray *result = [[NSMutableArray alloc] init];
     [result addObject:[NSNumber numberWithInt:(int)inputOneValue]];
     [result addObject:[NSNumber numberWithInt:(int)inputTwoValue]];
-    if(index > 1)
+    if(index > 0)
     [result addObject:[NSNumber numberWithInt:(int)inputThreeValue]];
-    if(index > 2)
+    if(index > 1)
     [result addObject:[NSNumber numberWithInt:(int)inputFourValue]];
-    if(index>3)
+    if(index>2)
     [result addObject:[NSNumber numberWithInt:(int)inputFiveValue]];
     return result;
 }

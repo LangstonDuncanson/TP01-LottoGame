@@ -42,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-59-iH8">
-                                <rect key="frame" x="20.5" y="87" width="334" height="29"/>
+                                <rect key="frame" x="20.5" y="140" width="334" height="29"/>
                                 <segments>
                                     <segment title="Pick 2"/>
                                     <segment title="Pick 3"/>
@@ -55,7 +55,7 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gCC-sW-Y9y">
-                                <rect key="frame" x="74" y="149" width="75" height="30"/>
+                                <rect key="frame" x="74" y="202" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="tND-UA-aiO"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0uu-iL-90n">
-                                <rect key="frame" x="74" y="193" width="75" height="30"/>
+                                <rect key="frame" x="74" y="246" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="rHb-Wg-2V8"/>
                                 </constraints>
@@ -73,7 +73,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tKa-WH-VM0">
-                                <rect key="frame" x="74" y="237" width="75" height="30"/>
+                                <rect key="frame" x="74" y="290" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="lj9-Zz-Xs6"/>
                                 </constraints>
@@ -82,7 +82,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4bv-0F-dJn">
-                                <rect key="frame" x="74" y="281" width="75" height="30"/>
+                                <rect key="frame" x="74" y="334" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="LcE-zB-EDH"/>
                                 </constraints>
@@ -91,7 +91,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-g2-udE">
-                                <rect key="frame" x="74" y="325" width="75" height="30"/>
+                                <rect key="frame" x="74" y="378" width="75" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="OnJ-dm-6eB"/>
                                 </constraints>
@@ -100,7 +100,7 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vst-M6-mZm">
-                                <rect key="frame" x="196" y="150" width="117" height="29"/>
+                                <rect key="frame" x="196" y="203" width="117" height="29"/>
                                 <segments>
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hKe-Ch-Czy">
-                                <rect key="frame" x="196" y="194" width="117" height="29"/>
+                                <rect key="frame" x="196" y="247" width="117" height="29"/>
                                 <segments>
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
@@ -120,7 +120,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vwo-Ri-8Wq">
-                                <rect key="frame" x="196" y="238" width="117" height="29"/>
+                                <rect key="frame" x="196" y="291" width="117" height="29"/>
                                 <segments>
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
@@ -130,7 +130,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VV2-KT-Dii">
-                                <rect key="frame" x="196" y="282" width="117" height="29"/>
+                                <rect key="frame" x="196" y="335" width="117" height="29"/>
                                 <segments>
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
@@ -140,7 +140,7 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e9l-t7-IMk">
-                                <rect key="frame" x="196" y="326" width="117" height="29"/>
+                                <rect key="frame" x="196" y="379" width="117" height="29"/>
                                 <segments>
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
@@ -150,7 +150,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7X-3i-bxK">
-                                <rect key="frame" x="29" y="498" width="95" height="30"/>
+                                <rect key="frame" x="29" y="551" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sumbit Ticket"/>
                                 <connections>
@@ -158,7 +158,7 @@
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hpR-BQ-kZe">
-                                <rect key="frame" x="122" y="387" width="131" height="29"/>
+                                <rect key="frame" x="122" y="440" width="131" height="29"/>
                                 <segments>
                                     <segment title="MID"/>
                                     <segment title="EVE"/>
@@ -166,32 +166,40 @@
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWB-Gp-Ymq">
-                                <rect key="frame" x="239" y="498" width="103" height="30"/>
+                                <rect key="frame" x="239" y="551" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Am I a Winner?"/>
                                 <connections>
                                     <action selector="winnerCheck:" destination="kpJ-hF-dfl" eventType="touchUpInside" id="07L-Gq-hwV"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fpY-YE-1h4">
+                                <rect key="frame" x="12.5" y="28" width="350" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="LAl-eV-34V"/>
+                                    <constraint firstAttribute="height" constant="96" id="eyl-eL-mck"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="nIq-59-iH8" firstAttribute="top" secondItem="fpY-YE-1h4" secondAttribute="bottom" constant="16" id="2E8-HV-NJq"/>
                             <constraint firstItem="hKe-Ch-Czy" firstAttribute="centerX" secondItem="vst-M6-mZm" secondAttribute="centerX" id="BxK-sc-x5I"/>
                             <constraint firstItem="e9l-t7-IMk" firstAttribute="centerY" secondItem="Jo6-g2-udE" secondAttribute="centerY" id="DVk-70-t3m"/>
                             <constraint firstItem="vst-M6-mZm" firstAttribute="centerY" secondItem="gCC-sW-Y9y" secondAttribute="centerY" id="GMv-0U-LdN"/>
                             <constraint firstItem="vwo-Ri-8Wq" firstAttribute="centerY" secondItem="tKa-WH-VM0" secondAttribute="centerY" id="HH9-Tq-fQe"/>
                             <constraint firstItem="hKe-Ch-Czy" firstAttribute="centerY" secondItem="0uu-iL-90n" secondAttribute="centerY" id="M9n-TP-Jtx"/>
                             <constraint firstItem="hpR-BQ-kZe" firstAttribute="centerX" secondItem="Ies-hk-rR5" secondAttribute="centerX" id="Qqv-Dv-yId"/>
+                            <constraint firstItem="fpY-YE-1h4" firstAttribute="centerX" secondItem="Ies-hk-rR5" secondAttribute="centerX" id="Tpo-hl-erk"/>
                             <constraint firstItem="nIq-59-iH8" firstAttribute="centerX" secondItem="Ies-hk-rR5" secondAttribute="centerX" id="V7s-et-bkQ"/>
                             <constraint firstItem="0uu-iL-90n" firstAttribute="top" secondItem="gCC-sW-Y9y" secondAttribute="bottom" constant="14" id="VOg-eh-ihb"/>
                             <constraint firstItem="Jo6-g2-udE" firstAttribute="centerX" secondItem="gCC-sW-Y9y" secondAttribute="centerX" id="YKw-x6-GLP"/>
+                            <constraint firstItem="fpY-YE-1h4" firstAttribute="top" secondItem="OFU-xg-Nzi" secondAttribute="bottom" constant="8" id="YUX-ny-rxo"/>
                             <constraint firstItem="0uu-iL-90n" firstAttribute="centerX" secondItem="gCC-sW-Y9y" secondAttribute="centerX" id="ZFt-3y-ysf"/>
                             <constraint firstItem="4bv-0F-dJn" firstAttribute="centerX" secondItem="gCC-sW-Y9y" secondAttribute="centerX" id="bMk-w3-Gxx"/>
                             <constraint firstItem="tKa-WH-VM0" firstAttribute="top" secondItem="0uu-iL-90n" secondAttribute="bottom" constant="14" id="bMn-jJ-TXO" userLabel="Round Style Text Field.top = Round Style Text Field.bottom + 14"/>
                             <constraint firstItem="vwo-Ri-8Wq" firstAttribute="centerX" secondItem="vst-M6-mZm" secondAttribute="centerX" id="bwY-CZ-sYI"/>
                             <constraint firstItem="vst-M6-mZm" firstAttribute="leading" secondItem="gCC-sW-Y9y" secondAttribute="trailing" constant="47" id="ddL-qU-SGV"/>
                             <constraint firstItem="gCC-sW-Y9y" firstAttribute="leading" secondItem="Ies-hk-rR5" secondAttribute="leadingMargin" constant="58" id="e0I-Id-VAr"/>
-                            <constraint firstItem="nIq-59-iH8" firstAttribute="top" secondItem="OFU-xg-Nzi" secondAttribute="bottom" constant="67" id="gQi-XG-pdi"/>
                             <constraint firstItem="hpR-BQ-kZe" firstAttribute="top" secondItem="nIq-59-iH8" secondAttribute="bottom" constant="272" id="hLR-0D-v4L"/>
                             <constraint firstItem="VV2-KT-Dii" firstAttribute="centerY" secondItem="4bv-0F-dJn" secondAttribute="centerY" id="ij9-bh-lla"/>
                             <constraint firstItem="VV2-KT-Dii" firstAttribute="centerX" secondItem="vst-M6-mZm" secondAttribute="centerX" id="jHz-XH-Bqm"/>
@@ -204,6 +212,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Daily" id="16w-JR-C4C"/>
                     <connections>
+                        <outlet property="gameImageView" destination="fpY-YE-1h4" id="aAa-Zp-BjT"/>
                         <outlet property="inputFive" destination="Jo6-g2-udE" id="fq3-Gd-RkG"/>
                         <outlet property="inputFiveState" destination="e9l-t7-IMk" id="VG2-uN-KuV"/>
                         <outlet property="inputFour" destination="4bv-0F-dJn" id="X9B-ke-g9L"/>
