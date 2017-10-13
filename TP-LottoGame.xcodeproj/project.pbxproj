@@ -15,6 +15,7 @@
 		E555D2801F8FC50C00D61251 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E555D27E1F8FC50C00D61251 /* LaunchScreen.storyboard */; };
 		E555D28B1F8FC50C00D61251 /* TP_LottoGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E555D28A1F8FC50C00D61251 /* TP_LottoGameTests.m */; };
 		E555D2961F8FC50C00D61251 /* TP_LottoGameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E555D2951F8FC50C00D61251 /* TP_LottoGameUITests.m */; };
+		E555D2A51F8FCC3800D61251 /* DailyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E555D2A41F8FCC3800D61251 /* DailyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		E555D2911F8FC50C00D61251 /* TP-LottoGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TP-LottoGameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E555D2951F8FC50C00D61251 /* TP_LottoGameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TP_LottoGameUITests.m; sourceTree = "<group>"; };
 		E555D2971F8FC50C00D61251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E555D2A31F8FCC3800D61251 /* DailyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyViewController.h; sourceTree = "<group>"; };
+		E555D2A41F8FCC3800D61251 /* DailyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				E555D2741F8FC50C00D61251 /* AppDelegate.m */,
 				E555D2761F8FC50C00D61251 /* ViewController.h */,
 				E555D2771F8FC50C00D61251 /* ViewController.m */,
+				E555D2A31F8FCC3800D61251 /* DailyViewController.h */,
+				E555D2A41F8FCC3800D61251 /* DailyViewController.m */,
 				E555D2791F8FC50C00D61251 /* Main.storyboard */,
 				E555D27C1F8FC50C00D61251 /* Assets.xcassets */,
 				E555D27E1F8FC50C00D61251 /* LaunchScreen.storyboard */,
@@ -275,6 +280,7 @@
 			files = (
 				E555D2781F8FC50C00D61251 /* ViewController.m in Sources */,
 				E555D2751F8FC50C00D61251 /* AppDelegate.m in Sources */,
+				E555D2A51F8FCC3800D61251 /* DailyViewController.m in Sources */,
 				E555D2721F8FC50C00D61251 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
