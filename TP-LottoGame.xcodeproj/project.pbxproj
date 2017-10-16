@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E522D8751F95481200619C47 /* WeeklyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E522D8741F95481200619C47 /* WeeklyViewController.m */; };
 		E555D2721F8FC50C00D61251 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E555D2711F8FC50C00D61251 /* main.m */; };
 		E555D2751F8FC50C00D61251 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E555D2741F8FC50C00D61251 /* AppDelegate.m */; };
 		E555D2781F8FC50C00D61251 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E555D2771F8FC50C00D61251 /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E522D8731F95481200619C47 /* WeeklyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklyViewController.h; sourceTree = "<group>"; };
+		E522D8741F95481200619C47 /* WeeklyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklyViewController.m; sourceTree = "<group>"; };
 		E555D26D1F8FC50C00D61251 /* TP-LottoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TP-LottoGame.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E555D2711F8FC50C00D61251 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E555D2731F8FC50C00D61251 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 				E555D2A31F8FCC3800D61251 /* DailyViewController.h */,
 				E555D2A41F8FCC3800D61251 /* DailyViewController.m */,
 				E555D2791F8FC50C00D61251 /* Main.storyboard */,
+				E522D8731F95481200619C47 /* WeeklyViewController.h */,
+				E522D8741F95481200619C47 /* WeeklyViewController.m */,
 				E555D27C1F8FC50C00D61251 /* Assets.xcassets */,
 				E555D27E1F8FC50C00D61251 /* LaunchScreen.storyboard */,
 				E555D2811F8FC50C00D61251 /* Info.plist */,
@@ -281,6 +286,7 @@
 				E555D2781F8FC50C00D61251 /* ViewController.m in Sources */,
 				E555D2751F8FC50C00D61251 /* AppDelegate.m in Sources */,
 				E555D2A51F8FCC3800D61251 /* DailyViewController.m in Sources */,
+				E522D8751F95481200619C47 /* WeeklyViewController.m in Sources */,
 				E555D2721F8FC50C00D61251 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +521,7 @@
 				E555D29C1F8FC50C00D61251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E555D29D1F8FC50C00D61251 /* Build configuration list for PBXNativeTarget "TP-LottoGameTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +530,7 @@
 				E555D29F1F8FC50C00D61251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E555D2A01F8FC50C00D61251 /* Build configuration list for PBXNativeTarget "TP-LottoGameUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +539,7 @@
 				E555D2A21F8FC50C00D61251 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
