@@ -66,14 +66,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 - (IBAction)sgmGameChange:(id)sender {
     [self resetValues];
     [self hideInputs];
@@ -87,7 +87,7 @@
         _sgmDrawings.hidden = YES;
     else
         _sgmDrawings.hidden = NO;
-
+    
 }
 - (IBAction)inputOneChange:(id)sender {
     if([sender selectedSegmentIndex] == 1)
@@ -147,7 +147,7 @@
         [_inputOneState setHidden:YES];
     else
         [_inputOneState setHidden:NO];
-  
+    
     if(_inputTwo.hidden == YES)
         [_inputTwoState setHidden:YES];
     else
@@ -157,12 +157,12 @@
         [_inputThreeState setHidden:YES];
     else
         [_inputThreeState setHidden:NO];
-  
+    
     if(_inputFour.hidden == YES)
         [_inputFourState setHidden:YES];
     else
         [_inputFourState setHidden:NO];
-  
+    
     if(_inputFive.hidden == YES)
         [_inputFiveState setHidden:YES];
     else
@@ -235,9 +235,9 @@
     }
     if ([_sgmGameSelector selectedSegmentIndex] == 4)
     {
-            inputLength = 2;
+        inputLength = 2;
     } else {
-            inputLength = 1;
+        inputLength = 1;
     }
 }
 
@@ -334,7 +334,7 @@
     }
     if(max == 37){
         
-    
+        
         int fantasyNumber = [self randomGenerator:max];
         while([self checkForDuplicates: fantasyNumber andSender:sender]){
             fantasyNumber=[self randomGenerator:max];
@@ -342,7 +342,7 @@
         return fantasyNumber;
     }
     
-        return [self randomGenerator:max];
+    return [self randomGenerator:max];
 }
 
 -(BOOL)checkForDuplicates:(int)check andSender:(UITextField*)sender{
@@ -363,21 +363,21 @@
     NSInteger inputFiveValue = [inputValue integerValue];
     
     
-        if ((sender.tag == _inputOne.tag))
-            if(check ==  (int)inputOneValue)
-                return NO;
-        if ((sender.tag == _inputTwo.tag))
-            if(check ==  (int)inputTwoValue)
-                return NO;
-        if ((sender.tag == _inputThree.tag))
-            if(check ==  (int)inputThreeValue)
-                return NO;
-        if ((sender.tag == _inputFour.tag))
-            if(check ==  (int)inputFourValue)
-                return NO;
-        if ((sender.tag == _inputFive.tag))
-            if(check ==  (int)inputFiveValue)
-                return NO;
+    if ((sender.tag == _inputOne.tag))
+        if(check ==  (int)inputOneValue)
+            return NO;
+    if ((sender.tag == _inputTwo.tag))
+        if(check ==  (int)inputTwoValue)
+            return NO;
+    if ((sender.tag == _inputThree.tag))
+        if(check ==  (int)inputThreeValue)
+            return NO;
+    if ((sender.tag == _inputFour.tag))
+        if(check ==  (int)inputFourValue)
+            return NO;
+    if ((sender.tag == _inputFive.tag))
+        if(check ==  (int)inputFiveValue)
+            return NO;
     
     if (check == (int)inputOneValue)
         return YES;
@@ -404,9 +404,9 @@
         if(![_inputOne.text  isEqual: @""])
             if(![_inputTwo.text  isEqual: @""])
                 if(![_inputThree.text  isEqual: @""]){
-                //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
+                    //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
                     [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
-                [self processSubmission];
+                    [self processSubmission];
                 }
     if(_sgmGameSelector.selectedSegmentIndex == 2)
         if(![_inputOne.text  isEqual: @""])
@@ -415,7 +415,7 @@
                     if(![_inputFour.text  isEqual: @""]){
                         //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
                         [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
-                    [self processSubmission];
+                        [self processSubmission];
                     }
     if(_sgmGameSelector.selectedSegmentIndex == 3)
         if(![_inputOne.text  isEqual: @""])
@@ -423,9 +423,9 @@
                 if(![_inputThree.text  isEqual: @""])
                     if(![_inputFour.text  isEqual: @""])
                         if(![_inputFive.text  isEqual: @""]){
-                        //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
-                        [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
-                        [self processSubmission];
+                            //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
+                            [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
+                            [self processSubmission];
                         }
     if(_sgmGameSelector.selectedSegmentIndex == 4)
         if(![_inputOne.text  isEqual: @""])
@@ -435,7 +435,7 @@
                         if(![_inputFive.text  isEqual: @""]){
                             //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
                             [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
-                        [self processSubmission];
+                            [self processSubmission];
                         }
 }
 -(void)processSubmission{
@@ -445,8 +445,9 @@
 - (IBAction)winnerCheck:(id)sender {
     NSMutableArray * choicesArray = [self generateArray];
     NSMutableArray * winningArray = [self generateWinningNumbers];
+    int index = (int)_sgmGameSelector.selectedSegmentIndex;
     //SLog(@"choices: %@,\n winning: %@",choicesArray,winningArray);
-    if (_sgmGameSelector.selectedSegmentIndex == 4){
+    if (index == 4){
         choicesArray = [self sortArray:choicesArray];
         winningArray = [self sortArray:winningArray];
         //NSLog(@"choices: %@,\n winning: %@",choicesArray,winningArray);
@@ -454,46 +455,88 @@
     NSString *choiceDesc = [choicesArray componentsJoinedByString:@","];
     NSString *winningDesc = [winningArray componentsJoinedByString:@","];
     int matchCount;
-    if(_sgmGameSelector.selectedSegmentIndex == 4)
+    if(index == 4)
         matchCount = [self checkWinnings:choicesArray andWinning:winningArray exact:NO];
     else
         matchCount = [self checkWinnings:choicesArray andWinning:winningArray exact:YES];
     NSMutableString *winningMessage = [NSMutableString stringWithFormat:@"not"];
-    if(_sgmGameSelector.selectedSegmentIndex == 0){
-        if(matchCount > 0)
+    if(index == 4){
+        if(matchCount == 5)
             winningMessage = [NSMutableString stringWithFormat:@"a"];
     }else{
-        if(matchCount > 1)
+        if(matchCount == (index + 2))
             winningMessage = [NSMutableString stringWithFormat:@"a"];
     }
-    
-    NSString * message = [NSString stringWithFormat:@"Your choice was: %@\n Winning Numbers are: %@ \n You have %d matches. \n You are %@ winner",choiceDesc,winningDesc,matchCount,winningMessage];
+    NSString * winningPrize = [self reportWinnings:matchCount andGameType:index];
+    NSString * message = [NSString stringWithFormat:@"Your choice was: %@\n Winning Numbers are: %@ \n You have %d matches. \n You are %@ winner\n Your Prize is:%@",choiceDesc,winningDesc,matchCount,winningMessage, winningPrize];
     [self showMessage:message andTitle:@"Winning Status"];
     [self enableControls:YES];
     _winnerBtn.enabled = NO;
 }
+-(NSString*)reportWinnings:(int)matchCount andGameType:(int)gameIndex{
+    NSString* result = @"";
+    switch (gameIndex) {
+        case 0:
+            if(matchCount == 2)
+                result = [NSString stringWithFormat:@"You won $50"];
+            // if (matchCount == 1)
+            //   result = [NSString stringWithFormat:@"You won a free ticket"];
+            break;
+        case 1:
+            if(matchCount == 3)
+                result = [NSString stringWithFormat:@"You won $250"];
+            //if (matchCount == 2)
+            //  result = [NSString stringWithFormat:@"You won a $50"];
+            break;
+        case 2:
+            if(matchCount == 4)
+                result = [NSString stringWithFormat:@"You won $5,000"];
+            //if (matchCount == 2)
+            //  result = [NSString stringWithFormat:@"You won a $50"];
+            break;
+        case 3:
+            if(matchCount == 5)
+                result = [NSString stringWithFormat:@"You won $50,000"];
+            break;
+        case 4:
+            if(matchCount == 5)
+                result = [NSString stringWithFormat:@"You won $200,000"];
+            /*if (matchCount == 4)
+             result = [NSString stringWithFormat:@"You won a $100"];
+             if (matchCount == 3)
+             result = [NSString stringWithFormat:@"You won a $10"];
+             if (matchCount == 2)
+             result = [NSString stringWithFormat:@"You won a Free Ticket"];
+             */break;
+        default:
+            break;
+    }
+    if([result isEqualToString:@""])
+        result = [NSString stringWithFormat:@"You didn't win!"];
+    return result;
+}
 -(int)checkWinnings:(NSMutableArray*)choices andWinning:(NSMutableArray*) winning exact:(BOOL)exactFlag{
     int count = 0;
     if(exactFlag == YES){
-    for (int i = 0; (!(i == [choices count])); i++){
-       NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:i]);
-        if([choices objectAtIndex:i] == [winning objectAtIndex:i]){
-            NSLog(@"Match Found");
-            count++;
-        }
-    }}else{
         for (int i = 0; (!(i == [choices count])); i++){
-            for (int j = 0; (!(j == [winning count])); j++){
-                NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:j]);
-                if([choices objectAtIndex:i] == [winning objectAtIndex:j]){
-                    NSLog(@"Match Found");
-                    count++;
+            NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:i]);
+            if([choices objectAtIndex:i] == [winning objectAtIndex:i]){
+                NSLog(@"Match Found");
+                count++;
+            }
+        }}else{
+            for (int i = 0; (!(i == [choices count])); i++){
+                for (int j = 0; (!(j == [winning count])); j++){
+                    NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:j]);
+                    if([choices objectAtIndex:i] == [winning objectAtIndex:j]){
+                        NSLog(@"Match Found");
+                        count++;
+                    }
+                    
                 }
-                
+            }
+            
         }
-    }
-    
-}
     return count;
 }
 
@@ -502,7 +545,7 @@
     NSMutableArray * winningArray = [[NSMutableArray alloc] init];
     if(index == 4){
         while(!([winningArray count] == 5)){
-        NSInteger random = arc4random_uniform(36) + 1;
+            NSInteger random = arc4random_uniform(36) + 1;
             BOOL flag = NO;
             for(id element in winningArray){
                 if([element intValue] == random){
@@ -516,7 +559,7 @@
     }else{
         
         while(!([winningArray count] == index + 2)){
-        NSInteger random = arc4random_uniform(10);
+            NSInteger random = arc4random_uniform(10);
             [winningArray addObject:[NSNumber numberWithInt:(int)random]];
         }
     }
@@ -563,11 +606,11 @@
     [result addObject:[NSNumber numberWithInt:(int)inputOneValue]];
     [result addObject:[NSNumber numberWithInt:(int)inputTwoValue]];
     if(index > 0)
-    [result addObject:[NSNumber numberWithInt:(int)inputThreeValue]];
+        [result addObject:[NSNumber numberWithInt:(int)inputThreeValue]];
     if(index > 1)
-    [result addObject:[NSNumber numberWithInt:(int)inputFourValue]];
+        [result addObject:[NSNumber numberWithInt:(int)inputFourValue]];
     if(index>2)
-    [result addObject:[NSNumber numberWithInt:(int)inputFiveValue]];
+        [result addObject:[NSNumber numberWithInt:(int)inputFiveValue]];
     return result;
 }
 -(NSString*)buildSubmissionString{
@@ -612,7 +655,7 @@
     
     if(index == 4)
     {
-                result= [NSString stringWithFormat:@"Your selected numbers are: %d, %d, %d, %d, %d\n Amount due: $%d.00", (int)inputOneValue, (int)inputTwoValue, (int)inputThreeValue, (int) inputFourValue, (int)inputFiveValue, amount];
+        result= [NSString stringWithFormat:@"Your selected numbers are: %d, %d, %d, %d, %d\n Amount due: $%d.00", (int)inputOneValue, (int)inputTwoValue, (int)inputThreeValue, (int) inputFourValue, (int)inputFiveValue, amount];
     }
     return result;
 }
@@ -660,7 +703,7 @@
     {
         _inputOne.text=@"";
         if(!(inputOneValue==0))
-           change = YES;
+            change = YES;
     }
     if(!((inputTwoValue > 0) && (inputTwoValue <= 36)))
     {
@@ -706,11 +749,11 @@
                                 }];
     
     /*UIAlertAction* noButton = [UIAlertAction
-                               actionWithTitle:@"No, thanks"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action) {
-                                   //Handle no, thanks button
-                               }];*/
+     actionWithTitle:@"No, thanks"
+     style:UIAlertActionStyleDefault
+     handler:^(UIAlertAction * action) {
+     //Handle no, thanks button
+     }];*/
     
     [alert addAction:yesButton];
     //[alert addAction:noButton];
