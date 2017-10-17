@@ -52,6 +52,87 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)winnerCheck:(id)sender {
+    NSMutableArray * choicesArray = [self generateArray];
+    NSMutableArray * winningArray = [self generateWinningNumbers];
+    int index = (int)_sgmGameSelector.selectedSegmentIndex;
+    //NSLog(@"choices: %@,\n winning: %@",choicesArray,winningArray);
+    
+    
+        choicesArray = [self sortArray:choicesArray];
+        winningArray = [self sortArray:winningArray];
+
+    NSString *choiceDesc = [choicesArray componentsJoinedByString:@","];
+    NSString *winningDesc = [winningArray componentsJoinedByString:@","];
+    int matchCount;
+        matchCount = [self checkWinnings:choicesArray andWinning:winningArray exact:YES];
+    NSMutableString *winningMessage = [NSMutableString stringWithFormat:@"not"];
+    if(index == 0){
+        if(matchCount == 5)
+            winningMessage = [NSMutableString stringWithFormat:@"a"];
+    }else{
+        if(matchCount == 6)
+            winningMessage = [NSMutableString stringWithFormat:@"a"];
+    }
+    NSString * winningPrize = [self reportWinnings:matchCount andGameType:index];
+    NSString * message = [NSString stringWithFormat:@"Your choice was: %@\n Winning Numbers are: %@ \n You have %d matches. \n You are %@ winner\n Your Prize is:%@",choiceDesc,winningDesc,matchCount,winningMessage, winningPrize];
+    [self showMessage:message andTitle:@"Winning Status"];
+    [self enableControls:YES];
+    _winnerBtn.enabled = NO;
+}
+-(NSString*)reportWinnings:(int)matchCount andGameType:(int)gameIndex{
+    NSString* result = @"";
+    switch (gameIndex) {
+        case 0:
+            if(matchCount == 5)
+                result = [NSString stringWithFormat:@"You won $50,000"];
+            break;
+        case 1:
+            if(matchCount == 6)
+                result = [NSString stringWithFormat:@"You won $200,000"];
+            break;
+        default:
+            break;
+    }
+    if([result isEqualToString:@""])
+        result = [NSString stringWithFormat:@"You didn't win!"];
+    return result;
+}
+-(int)checkWinnings:(NSMutableArray*)choices andWinning:(NSMutableArray*) winning exact:(BOOL)exactFlag{
+    int count = 0;
+    BOOL luckymoneyball = NO;
+    if(_sgmGameSelector.selectedSegmentIndex == 1)
+            for (int i = 0; (!(i == [choices count])); i++){
+                for (int j = 0; (!(j == [winning count])); j++){
+                    NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:j]);
+                    if([choices objectAtIndex:i] == [winning objectAtIndex:j]){
+                        NSLog(@"Match Found");
+                        count++;
+                    }
+                    
+                }
+            }
+    if(_sgmGameSelector.selectedSegmentIndex == 0)
+    for (int i = 0; (!(i == [choices count])); i++){
+        for (int j = 0; (!(j == [winning count])); j++){
+            NSLog(@"%@ vs %@", [choices objectAtIndex:i], [winning objectAtIndex:j]);
+            if(!((i==4)||(j==4))){
+            if([choices objectAtIndex:i] == [winning objectAtIndex:j]){
+                NSLog(@"Match Found");
+                count++;
+            }
+            }else{
+                if(luckymoneyball == NO)
+                if([choices objectAtIndex:4] == [winning objectAtIndex:4]){
+                    NSLog(@"Match Found");
+                    count++;
+                    luckymoneyball = YES;
+                }
+            }
+        }
+    }
+    return count;
+}
 
 -(NSMutableArray*)generateWinningNumbers{
     int index = (int)_sgmGameSelector.selectedSegmentIndex;
@@ -87,47 +168,25 @@
                 [winningArray addObject:[NSNumber numberWithInt:(int)random]];
             }
         }
-        return winningArray;
+        
     
+    }
+return winningArray;
 }
 
-
-    
--(IBAction)submitAction:(id)sender{
-        if (_sgmGameSelector.selectedSegmentIndex == 0){
-            if(![_inputOne.text  isEqual: @""])
-                if(![_inputTwo.text  isEqual: @""])
-                    if(![_inputThree.text  isEqual: @""])
-                        if(![_inputFour.text  isEqual: @""])
-                            if(![_inputFive.text  isEqual: @""]){
-                                if([self checkForDuplicateEntry]){
-                                    [self showMessage:@"Duplicates are not allowed within Lucky Money." andTitle:@"Duplicates Found"];
-                                }else{
-                                    [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
-                                    [self processSubmission];
-                                }}
-        }
-        if (_sgmGameSelector.selectedSegmentIndex == 1){
-            if(![_inputOne.text  isEqual: @""])
-                if(![_inputTwo.text  isEqual: @""])
-                    if(![_inputThree.text  isEqual: @""])
-                        if(![_inputFour.text  isEqual: @""])
-                            if(![_inputFive.text  isEqual: @""])
-                                if(![_inputSix.text  isEqual: @""]){
-                                    if([self checkForDuplicateEntry]){
-                                        [self showMessage:@"Duplicates are not allowed within Florida Lotto." andTitle:@"Duplicates Found"];
-                                    }else{
-                                        [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
-                                        [self processSubmission];
-                                    }
-                                }
-            
-        }
-    }
-    
 -(NSMutableArray*)sortArray:(NSMutableArray*)sortArray{
+    NSNumber *holderChoice ;
+    if(_sgmGameSelector.selectedSegmentIndex == 0)
+    {
+        holderChoice = [sortArray objectAtIndex:4];
+        [sortArray removeObjectAtIndex:4];
+    }
     NSSortDescriptor *highestToLowest = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
     [sortArray sortUsingDescriptors:[NSArray arrayWithObject:highestToLowest]];
+    if(_sgmGameSelector.selectedSegmentIndex ==0)
+    {
+        [sortArray addObject:holderChoice];
+    }
     return sortArray;
 }
     
@@ -179,7 +238,10 @@
             
         }
     }
-    
+-(void)processSubmission{
+    [self enableControls:NO];
+    _winnerBtn.enabled = YES;
+}
 -(NSMutableArray*)generateArray{
     NSString * inputValue = _inputOne.text;
     NSInteger inputOneValue = [inputValue integerValue];
@@ -606,5 +668,5 @@
     
     [self presentViewController:alert animated:YES completion:nil];
 }
-}
+
 @end
