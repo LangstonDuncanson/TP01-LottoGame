@@ -124,7 +124,8 @@
             break;
         case 1:
             image= [NSString stringWithFormat:@"p3"];
-            color = [UIColor colorWithRed:1.0 green:0.64 blue:0.0 alpha:1];            break;
+            color = [UIColor colorWithRed:1.0 green:0.64 blue:0.0 alpha:1];
+            break;
         case 2:
             image= [NSString stringWithFormat:@"p4"];
             color = [UIColor colorWithRed:0.0 green:1.0 blue:0.54 alpha:1];
@@ -393,6 +394,7 @@
     return NO;
 }
 - (IBAction)sumbitAction:(id)sender {
+    
     if(_sgmGameSelector.selectedSegmentIndex == 0)
         if(![_inputOne.text  isEqual: @""])
             if(![_inputTwo.text  isEqual: @""]){
@@ -434,8 +436,12 @@
                     if(![_inputFour.text  isEqual: @""])
                         if(![_inputFive.text  isEqual: @""]){
                             //[self showMessage:@"Submission Accepted" andTitle:@"Submission Status"];
+                            if([self checkForDuplicateEntry]){
+                                [self showMessage:@"Duplicates are not allowed within Fantasy 5." andTitle:@"Duplicates Found"];
+                            }else{
                             [self showMessage:[self buildSubmissionString] andTitle:@"Entry State"];
                             [self processSubmission];
+                            }
                         }
 }
 -(void)processSubmission{
@@ -612,6 +618,19 @@
     if(index>2)
         [result addObject:[NSNumber numberWithInt:(int)inputFiveValue]];
     return result;
+}
+
+-(BOOL)checkForDuplicateEntry{
+    NSMutableArray*myArray = [self generateArray];
+    for (int i = 0; (i < [myArray count]); i++) {
+        for(int j = 0; (j < [myArray count]); j++){
+            if (([myArray objectAtIndex:i]) == ([myArray objectAtIndex:j])){
+                if(!(i == j))
+                    return YES;
+            }
+        }
+    }
+    return NO;
 }
 -(NSString*)buildSubmissionString{
     NSString* result;

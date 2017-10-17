@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="spo-zv-VeV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="spo-zv-VeV">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,6 +45,9 @@
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputOneChange:" destination="H9K-nH-bh1" eventType="valueChanged" id="kkW-TX-Ts7"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hjw-f2-5wY">
                                 <rect key="frame" x="76" y="215" width="75" height="30"/>
@@ -61,6 +64,9 @@
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputTwoChange:" destination="H9K-nH-bh1" eventType="valueChanged" id="LX0-jU-hrc"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbq-1X-1Wv">
                                 <rect key="frame" x="76" y="261" width="75" height="30"/>
@@ -77,6 +83,9 @@
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputThreeChange:" destination="H9K-nH-bh1" eventType="valueChanged" id="CHJ-Hd-ewP"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaG-As-qGV">
                                 <rect key="frame" x="76" y="307" width="75" height="30"/>
@@ -93,6 +102,9 @@
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputFourChange:" destination="H9K-nH-bh1" eventType="valueChanged" id="amV-iY-WT0"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="44L-4f-ZNJ">
                                 <rect key="frame" x="76" y="353" width="75" height="30"/>
@@ -109,6 +121,9 @@
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputFiveChange:" destination="H9K-nH-bh1" eventType="valueChanged" id="Ybu-0N-MNT"/>
+                                </connections>
                             </segmentedControl>
                             <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dby-2d-UOB">
                                 <rect key="frame" x="76" y="399" width="75" height="30"/>
@@ -125,11 +140,17 @@
                                     <segment title="Manual"/>
                                     <segment title="Quick"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputSixChange:" destination="H9K-nH-bh1" eventType="valueChanged" id="aEP-Py-RVt"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5zV-98-oYo">
                                 <rect key="frame" x="68" y="499" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit Ticket"/>
+                                <connections>
+                                    <action selector="submitAction:" destination="H9K-nH-bh1" eventType="touchUpInside" id="uiE-bO-8Rn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KUW-M5-ilx">
                                 <rect key="frame" x="217" y="499" width="103" height="30"/>
