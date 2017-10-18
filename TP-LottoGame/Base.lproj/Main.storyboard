@@ -170,7 +170,6 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="PjZ-xQ-WOH" firstAttribute="leading" secondItem="jbq-1X-1Wv" secondAttribute="trailing" constant="36" id="3Mh-f4-keJ"/>
                             <constraint firstItem="Ie4-om-W1D" firstAttribute="leading" secondItem="44L-4f-ZNJ" secondAttribute="trailing" constant="36" id="3rT-Zz-bgx"/>
@@ -207,7 +206,7 @@
                             <constraint firstItem="hjw-f2-5wY" firstAttribute="top" secondItem="x59-hU-j33" secondAttribute="bottom" constant="16" id="wys-qa-lvS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weekly" id="l7i-sn-nLP"/>
+                    <tabBarItem key="tabBarItem" title="Weekly" image="date" id="l7i-sn-nLP"/>
                     <connections>
                         <outlet property="gameImageView" destination="Yyq-wX-4ZJ" id="Rav-wc-XIE"/>
                         <outlet property="inputFive" destination="44L-4f-ZNJ" id="QN5-KW-nXW"/>
@@ -412,7 +411,7 @@
                             <constraint firstItem="e9l-t7-IMk" firstAttribute="centerX" secondItem="vst-M6-mZm" secondAttribute="centerX" id="txR-cV-Z5m"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Daily" id="16w-JR-C4C"/>
+                    <tabBarItem key="tabBarItem" title="Daily" image="reload" id="16w-JR-C4C"/>
                     <connections>
                         <outlet property="gameImageView" destination="fpY-YE-1h4" id="aAa-Zp-BjT"/>
                         <outlet property="inputFive" destination="Jo6-g2-udE" id="fq3-Gd-RkG"/>
@@ -454,4 +453,8 @@
             <point key="canvasLocation" x="-705" y="6"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="date" width="32" height="32"/>
+        <image name="reload" width="32" height="32"/>
+    </resources>
 </document>

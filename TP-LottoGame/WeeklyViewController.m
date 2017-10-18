@@ -45,11 +45,29 @@
     _inputFour.tag = 4;
     _inputFive.tag = 5;
     _inputSix.tag = 6;
+    [self updateVisuals];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)updateVisuals{
+    NSString * image;
+    UIColor * color;
+    switch (_sgmGameSelector.selectedSegmentIndex) {
+        case 0:
+            image = [NSString stringWithFormat:@"lm"];
+            color = [UIColor colorWithRed:0.2 green:0.8 blue:0.2 alpha:1];
+            break;
+        case 1:
+            image = [NSString stringWithFormat:@"lg"];
+            color = [UIColor colorWithRed:0.08 green:0.33 blue:0.08 alpha:1];
+            break;
+    }
+    image = [NSString stringWithFormat:@"%@.jpg",image];
+    self.gameImageView.image = [UIImage imageNamed:image];
+    self.view.backgroundColor = color;
 }
 
 - (IBAction)winnerCheck:(id)sender {
@@ -339,6 +357,7 @@ return winningArray;
         _inputSix.hidden = YES;
         _inputStateSix.hidden = YES;
     }
+    [self updateVisuals];
 }
 - (IBAction)inputOneChange:(id)sender {
     if([sender selectedSegmentIndex] == 1)
